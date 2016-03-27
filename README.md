@@ -81,6 +81,20 @@ return [
 
 ## Usage
 
+You can protect some routes by using the `demoMode`-middleware on them.
+
+```php
+//only users with the viewTopSecretPage-ability be able to see this
+
+Route::group(['middleware' => 'demoMode'], function () {
+    Route::get('/secret-route', 'SecretController@index');
+
+    Route::get('/another-secret-route', 'AnotherSecretController@index';
+});
+```
+
+Unless you visit the url specified in the `grant_access_to_demo_url`-key of the config file first, visiting these routes will result in a redirect in to the url specified in the `redirect_unauthorized_users_to_url`-key of the config file.
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
