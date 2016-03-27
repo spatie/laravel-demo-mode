@@ -7,7 +7,7 @@ use Illuminate\Config\Repository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class RedirectIfDemo
+class DemoMode
 {
     /**
      * @var array

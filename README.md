@@ -31,18 +31,18 @@ Next up, the service provider must be registered:
 ];
 ```
 
-The `\Spatie\DemoMode\RedirectIfDemo::class`-middleware must be registered in the kernel:
+The `\Spatie\DemoMode\DemoMode::class`-middleware must be registered in the kernel:
 
 ```php
 //app/Http/Kernel.php
 
 protected $routeMiddleware = [
   ...
-  'redirectIfDemo' => \Spatie\DemoMode\RedirectIfDemo::class,
+  'DemoMode' => \Spatie\DemoMode\DemoMode::class,
 ];
 ```
 
-Naming the middleware `redirectIfDemo` is just a suggestion. You can give it any name you'd like.
+Naming the route middleware `DemoMode` is just a suggestion. You can give it any name you'd like.
 
 You must publish the config file:
 

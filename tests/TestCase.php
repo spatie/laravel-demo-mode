@@ -7,7 +7,7 @@ use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Route;
 use Spatie\DemoMode\DemoModeServiceProvider;
-use Spatie\DemoMode\RedirectIfDemo;
+use Spatie\DemoMode\DemoMode;
 use PHPUnit_Framework_Assert as PHPUnit;
 
 abstract class TestCase extends Orchestra
@@ -52,7 +52,7 @@ abstract class TestCase extends Orchestra
 
     protected function registerMiddleware()
     {
-        $this->app[Router::class]->middleware('redirectIfDemo', RedirectIfDemo::class);
+        $this->app[Router::class]->middleware('demoMode', DemoMode::class);
     }
 
     /**
@@ -60,7 +60,7 @@ abstract class TestCase extends Orchestra
      */
     protected function setUpRoutes($app)
     {
-        Route::any('/secret-page', ['middleware' => 'redirectIfDemo', function () {
+        Route::any('/secret-page', ['middleware' => 'demoMode', function () {
             return 'secret content';
         }]);
 
