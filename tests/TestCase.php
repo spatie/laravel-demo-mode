@@ -69,7 +69,7 @@ abstract class TestCase extends Orchestra
         });
 
         Route::any('/work-in-progress', function () {
-            return 'this sit is not launched yet';
+            return 'this site is not launched yet';
         });
     }
 
