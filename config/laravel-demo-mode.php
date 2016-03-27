@@ -9,7 +9,7 @@ return [
 
     /**
      * Visitors that go an url that is protected by demo mode will be redirected.
-     * to this url
+     * to this url.
      */
     'redirect_unauthorized_users_to_url' => '/work-in-progress',
 
