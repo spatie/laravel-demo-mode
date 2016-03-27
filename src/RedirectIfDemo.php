@@ -40,10 +40,10 @@ class RedirectIfDemo
 
     protected function protectedByDemoMode(Request $request) : bool
     {
-        return $this->config['enabled'];
+        return true;
     }
 
-    protected function hasDemoAccess($request) : bool
+    protected function hasDemoAccess(Request $request) : bool
     {
         if (session()->has('demo_access_granted')) {
             return true;

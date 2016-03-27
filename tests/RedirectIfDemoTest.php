@@ -23,4 +23,14 @@ class RedirectIfDemoTest extends TestCase
 
         $this->assertRedirectedTo($this->config['redirect_authorized_users_to_url']);
     }
+
+    /**
+     * @test
+     */
+    public function it_will_not_intervene_with_unprotected_routes()
+    {
+        $this->call('GET', '/unprotected-page');
+
+        $this->see('unprotected content');
+    }
 }

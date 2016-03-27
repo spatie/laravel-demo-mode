@@ -64,6 +64,10 @@ abstract class TestCase extends Orchestra
             return 'secret content';
         }]);
 
+        Route::any('/unprotected-page', function () {
+            return 'unprotected content';
+        });
+
         Route::any('/work-in-progress', function () {
             return 'this sit is not launched yet';
         });

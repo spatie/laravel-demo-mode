@@ -9,11 +9,11 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-demo-mode.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-demo-mode)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-demo-mode.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-demo-mode)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package provides functionality in demo mode. All unauthorized users will be redirected to a configured url. Users can be authorized by visiting an url.
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-## Install
+## Installation
 
 You can install the package via composer:
 
@@ -21,12 +21,52 @@ You can install the package via composer:
 $ composer require spatie/laravel-demo-mode
 ```
 
-## Usage
+Next up, the service provider must be registered:
 
-``` php
-$skeleton = new Spatie\Skeleton();
-echo $skeleton->echoPhrase('Hello, Spatie!');
+```php
+'providers' => [
+    ...
+    Spatie\DemoMode\DemoServiceProvider::class,
+
+];
 ```
+
+You must publish the config file:
+
+```bash
+php artisan vendor:publish --provider="Spatie\DemoMode\DemoModeServiceProvider"
+```
+
+This is the content of the published file laravel-demo-mode.php:
+
+```php
+return [
+    
+    /**
+     * This is the master switch to enable demo mode.
+     */
+    'enabled' => env('DEMO_MODE_ENABLED', true),
+    
+    /**
+     * Visitors that go an url that is protected by demo mode will be redirected.
+     * to this url
+     */
+    'redirect_unauthorized_users_to_url' => '/work-in-progress',
+
+    /**
+     * Visiting this url will grant access to the pages protected by demo mode.
+     */
+    'grant_access_to_demo_url' => '/demo',
+
+    /**
+     * After have been granted access visitors will be redirected to this url.
+     */
+    'redirect_authorized_users_to_url' => '/',
+
+];
+```
+
+## Usage
 
 ## Changelog
 
