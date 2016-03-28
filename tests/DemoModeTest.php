@@ -2,7 +2,7 @@
 
 namespace Spatie\DemoMode\Test;
 
-class RedirectIfDemoTest extends TestCase
+class DemoModeTest extends TestCase
 {
     /** @test */
     public function it_redirects_users_who_have_not_been_granted_access_to_a_work_in_progress_page()
