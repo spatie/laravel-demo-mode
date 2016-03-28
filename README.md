@@ -7,7 +7,9 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-demo-mode.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-demo-mode)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-demo-mode.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-demo-mode)
 
-This package provides functionality in demo mode. All unauthorized users will be redirected to a configured url. Users can be authorized by visiting an url.
+Image you are working on new app. Your client wants to see that progress that you've made. However your site isn't ready for prime time yet. You could already create some login functionality and only display the site to logged in users. But why bother creating users when there is a more pragmatic approach?
+
+This package provides a route middleware to protected routes from prying eyes. All users that visit a protocted route will be redirect to a configurable url (e.g. "/work-in-progress"). To view the content of the routes a visitor must first visit a url that grants access (e.g. "/demo").
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 

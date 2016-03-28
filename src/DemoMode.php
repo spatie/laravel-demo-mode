@@ -9,10 +9,8 @@ use Illuminate\Http\Request;
 
 class DemoMode
 {
-    /**
-     * @var array
-     */
-    private $config;
+    /** @var array */
+    protected $config;
 
     public function __construct(Repository $config)
     {
