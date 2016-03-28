@@ -10,7 +10,7 @@ use Spatie\DemoMode\DemoModeServiceProvider;
 use Spatie\DemoMode\DemoMode;
 use PHPUnit_Framework_Assert as PHPUnit;
 
-abstract class TestCase extends Orchestra
+class TestCase extends Orchestra
 {
     /**
      * @var array
@@ -73,7 +73,15 @@ abstract class TestCase extends Orchestra
         });
     }
 
-    public function assertRedirectedTo(string $uri)
+    /**
+     * Assert whether the client was redirected to a given URI.
+     *
+     * @param  string $uri
+     * @param  array $with
+     *
+     * @return void
+     */
+    public function assertRedirectedTo($uri, $with = [])
     {
         PHPUnit::assertInstanceOf('Illuminate\Http\RedirectResponse', $this->response);
 
