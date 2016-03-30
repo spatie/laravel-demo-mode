@@ -7,9 +7,9 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-demo-mode.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-demo-mode)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-demo-mode.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-demo-mode)
 
-Image you are working on new app. Your client wants to see that progress that you've made. However your site isn't ready for prime time yet. You could already create some login functionality and only display the site to logged in users. But why bother creating users when there is a more pragmatic approach?
+Image you are working on new app. Your client wants to see the progress that you've made. However your site isn't ready for prime time yet. Sure, you could create some login functionality and display the site only to logged in users. But why bother creating users when there is a more pragmatic approach?
 
-This package provides a route middleware to protected routes from prying eyes. All users that visit a protocted route will be redirect to a configurable url (e.g. `/work-in-progress`). To view the content of the routes a visitor must first visit a url that grants access (e.g. `/demo`).
+This package provides a route middleware to protected routes from prying eyes. All users that visit a protocted route will be redirect to a configurable url (e.g. `/under-construction`). To view the content of the routes a visitor must first visit a url that grants access (e.g. `/demo`).
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
@@ -64,7 +64,7 @@ return [
      * Visitors that go an url that is protected by demo mode will be redirected.
      * to this url
      */
-    'redirect_unauthorized_users_to_url' => '/work-in-progress',
+    'redirect_unauthorized_users_to_url' => '/under-construction',
 
     /**
      * After have been granted access visitors will be redirected to this url.

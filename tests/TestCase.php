@@ -70,7 +70,7 @@ class TestCase extends Orchestra
             return 'unprotected content';
         });
 
-        Route::any('/work-in-progress', function () {
+        Route::any('/under-construction', function () {
             return 'this site is not launched yet';
         });
     }

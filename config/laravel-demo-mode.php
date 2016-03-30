@@ -11,7 +11,7 @@ return [
      * Visitors that go an url that is protected by demo mode will be redirected.
      * to this url.
      */
-    'redirect_unauthorized_users_to_url' => '/work-in-progress',
+    'redirect_unauthorized_users_to_url' => '/under-construction',
 
     /**
      * After have been granted access visitors will be redirected to this url.
