@@ -92,7 +92,7 @@ You can protect some routes by using the `demoMode`-middleware on them.
 Route::group(['middleware' => 'demoMode'], function () {
     Route::get('/secret-route', 'SecretController@index');
 
-    Route::get('/another-secret-route', 'AnotherSecretController@index';
+    Route::get('/another-secret-route', 'AnotherSecretController@index');
 });
 ```
 
