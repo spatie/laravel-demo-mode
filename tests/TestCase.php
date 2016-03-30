@@ -78,10 +78,8 @@ class TestCase extends Orchestra
     /**
      * Assert whether the client was redirected to a given URI.
      *
-     * @param  string $uri
-     * @param  array $with
-     *
-     * @return void
+     * @param string $uri
+     * @param array  $with
      */
     public function assertRedirectedTo($uri, $with = [])
     {

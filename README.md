@@ -50,7 +50,7 @@ You must publish the config file:
 php artisan vendor:publish --provider="Spatie\DemoMode\DemoModeServiceProvider"
 ```
 
-This is the content of the published file laravel-demo-mode.php:
+This is the content of the published config file `laravel-demo-mode.php`:
 
 ```php
 return [
