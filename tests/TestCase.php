@@ -60,6 +60,8 @@ class TestCase extends Orchestra
      */
     protected function setUpRoutes($app)
     {
+        Route::demoAccess('/demo');
+
         Route::any('/secret-page', ['middleware' => 'demoMode', function () {
             return 'secret content';
         }]);

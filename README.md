@@ -67,11 +67,6 @@ return [
     'redirect_unauthorized_users_to_url' => '/work-in-progress',
 
     /**
-     * Visiting this url will grant access to the pages protected by demo mode.
-     */
-    'grant_access_to_demo_url' => '/demo',
-
-    /**
      * After have been granted access visitors will be redirected to this url.
      */
     'redirect_authorized_users_to_url' => '/',
@@ -79,12 +74,20 @@ return [
 ];
 ```
 
+In your routes file you must call the `demoAccess` route macro.
+```php
+Route::demoAccess('/demo');
+```
+Visiting `/demo` will grant access to the pages protected by demo mode. Of course you can choose any url you'd like.
+
+Visiting
+
 ## Usage
 
 You can protect some routes by using the `demoMode`-middleware on them.
 
 ```php
-//only users with the viewTopSecretPage-ability be able to see this
+//only users who have previously visited "/demo" will be able to see these pages.
 
 Route::group(['middleware' => 'demoMode'], function () {
     Route::get('/secret-route', 'SecretController@index');
@@ -93,7 +96,7 @@ Route::group(['middleware' => 'demoMode'], function () {
 });
 ```
 
-Unless you visit the url specified in the `grant_access_to_demo_url`-key of the config file first, visiting these routes will result in a redirect in to the url specified in the `redirect_unauthorized_users_to_url`-key of the config file.
+Unless you visit the url used by the `demoAccess` route macro first, visiting these routes will result in a redirect in to the url specified in the `redirect_unauthorized_users_to_url`-key of the config file.
 
 ## Changelog
 
