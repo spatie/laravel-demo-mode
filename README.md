@@ -38,7 +38,7 @@ The `\Spatie\DemoMode\DemoMode::class`-middleware must be registered in the kern
 
 protected $routeMiddleware = [
   ...
-  'DemoMode' => \Spatie\DemoMode\DemoMode::class,
+  'demoMode' => \Spatie\DemoMode\DemoMode::class,
 ];
 ```
 
@@ -79,6 +79,8 @@ In your routes file you must call the `demoAccess` route macro.
 Route::demoAccess('/demo');
 ```
 Visiting `/demo` will grant access to the pages protected by demo mode. Of course you can choose any url you'd like.
+
+Visiting
 
 ## Usage
 
