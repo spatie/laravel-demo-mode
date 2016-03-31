@@ -90,9 +90,9 @@ You can protect some routes by using the `demoMode`-middleware on them.
 //only users who have previously visited "/demo" will be able to see these pages.
 
 Route::group(['middleware' => 'demoMode'], function () {
-    Route::get('/secret-route', 'SecretController@index');
-
-    Route::get('/another-secret-route', 'AnotherSecretController@index');
+    Route::get('/secret-route', function() {
+        echo 'Hi!';
+    });
 });
 ```
 
