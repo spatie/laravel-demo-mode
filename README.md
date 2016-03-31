@@ -80,8 +80,6 @@ Route::demoAccess('/demo');
 ```
 Visiting `/demo` will grant access to the pages protected by demo mode. Of course you can choose any url you'd like.
 
-Visiting
-
 ## Usage
 
 You can protect some routes by using the `demoMode`-middleware on them.
