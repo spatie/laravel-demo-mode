@@ -26,7 +26,7 @@ Next up, the service provider must be registered:
 ```php
 'providers' => [
     ...
-    Spatie\DemoMode\DemoServiceProvider::class,
+    Spatie\DemoMode\DemoModeServiceProvider::class,
 
 ];
 ```
