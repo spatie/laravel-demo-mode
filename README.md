@@ -11,6 +11,8 @@ Image you are working on new app. Your client wants to see the progress that you
 
 This package provides a route middleware to protected routes from prying eyes. All users that visit a protocted route will be redirect to a configurable url (e.g. `/under-construction`). To view the content of the routes a visitor must first visit a url that grants access (e.g. `/demo`).
 
+A word to the wise: do not use this package to restrict access to sensitive data or to protect an admin section. For those cases you should use proper authentication.
+
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
 ## Installation
