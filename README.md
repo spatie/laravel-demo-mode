@@ -98,6 +98,8 @@ Route::group(['middleware' => 'demoMode'], function () {
 
 Unless you visit the url used by the `demoAccess` route macro first, visiting these routes will result in a redirect in to the url specified in the `redirect_unauthorized_users_to_url`-key of the config file.
 
+An authenticated user has access to all protected routes too.
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
