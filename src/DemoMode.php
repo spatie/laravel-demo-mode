@@ -6,6 +6,8 @@ use Closure;
 use Illuminate\Config\Repository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+use Route as RouteFacade;
 
 class DemoMode
 {
@@ -27,7 +29,7 @@ class DemoMode
      */
     public function handle($request, Closure $next)
     {
-        if ($this->protectedByDemoMode($request)) {
+        if ($this->protectedByDemoMode(RouteFacade::current())) {
             if (!$this->hasDemoAccess($request)) {
                 return new RedirectResponse($this->config['redirect_unauthorized_users_to_url']);
             }
@@ -36,9 +38,10 @@ class DemoMode
         return $next($request);
     }
 
-    protected function protectedByDemoMode(Request $request) : bool
+    protected function protectedByDemoMode(Route $currentRoute) : bool
     {
-        return true;
+        $currentRouteMiddlewares = RouteFacade::gatherRouteMiddlewares($currentRoute);
+        return in_array('Spatie\DemoMode\DemoMode', $currentRouteMiddlewares);
     }
 
     protected function hasDemoAccess(Request $request) : bool
