@@ -47,7 +47,7 @@ class DemoMode
             return true;
         }
 
-        if (auth()->user()) {
+        if (auth()->check()) {
             return true;
         }
 
