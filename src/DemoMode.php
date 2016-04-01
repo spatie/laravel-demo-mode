@@ -29,10 +29,8 @@ class DemoMode
      */
     public function handle($request, Closure $next)
     {
-        if ($this->protectedByDemoMode(RouteFacade::current())) {
-            if (!$this->hasDemoAccess($request)) {
-                return new RedirectResponse($this->config['redirect_unauthorized_users_to_url']);
-            }
+        if ($this->protectedByDemoMode(RouteFacade::current()) && !$this->hasDemoAccess($request)) {
+            return new RedirectResponse($this->config['redirect_unauthorized_users_to_url']);
         }
 
         return $next($request);
