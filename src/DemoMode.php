@@ -43,14 +43,6 @@ class DemoMode
 
     protected function hasDemoAccess(Request $request) : bool
     {
-        if (session()->has('demo_access_granted')) {
-            return true;
-        }
-
-        if (auth()->check()) {
-            return true;
-        }
-
-        return false;
+        return session()->has('demo_access_granted') || auth()->check();
     }
 }
