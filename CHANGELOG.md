@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-demo-mode` will be documented in this file
 
+## 1.0.2 - 2016/04/04
+
+- Fixed enabled flag
+
 ## 1.0.1 - 2016/04/04
 
 - Fixed composer dependencies

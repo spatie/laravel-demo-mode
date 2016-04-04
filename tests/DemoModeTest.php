@@ -13,6 +13,16 @@ class DemoModeTest extends TestCase
     }
 
     /** @test */
+    public function it_only_redirects_users_if_demo_mode_is_enabled()
+    {
+        $this->app['config']->set('laravel-demo-mode.enabled', false);
+
+        $this->call('GET', '/secret-page');
+
+        $this->seePageIs('/secret-page');
+    }
+
+    /** @test */
     public function it_will_allow_visiting_secret_pages_after_having_visited_the_grant_demo_url_first()
     {
         $this->call('GET', '/demo');

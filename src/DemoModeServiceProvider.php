@@ -28,6 +28,10 @@ class DemoModeServiceProvider extends ServiceProvider
 
         $router->macro('demoAccess', function ($url) use ($router) {
 
+            if (!config('laravel-demo-mode.enabled')) {
+                return;
+            }
+
             $router->get($url, function () {
                 session()->put('demo_access_granted', true);
 
