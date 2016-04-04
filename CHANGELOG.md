@@ -2,19 +2,10 @@
 
 All Notable changes to `laravel-demo-mode` will be documented in this file
 
-## NEXT - YYYY-MM-DD
+## 1.0.1 - 2016/04/04
 
-### Added
-- Nothing
+- Fixed composer dependencies
 
-### Deprecated
-- Nothing
+## 1.0.0 - 2016/03/31
 
-### Fixed
-- Nothing
-
-### Removed
-- Nothing
-
-### Security
-- Nothing
+- First release
