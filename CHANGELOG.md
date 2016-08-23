@@ -2,6 +2,10 @@
 
 All Notable changes to `laravel-demo-mode` will be documented in this file
 
+## 1.0.3 - 2016-08-23
+
+- add L5.3 compatibility
+
 ## 1.0.2 - 2016/04/04
 
 - Fixed enabled flag
