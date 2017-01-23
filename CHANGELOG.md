@@ -1,6 +1,10 @@
 # Changelog
 
-All Notable changes to `laravel-demo-mode` will be documented in this file
+All notable changes to `laravel-demo-mode` will be documented in this file
+
+## 1.1.0 - 2017-01-23
+
+- add L5.4 compatibility
 
 ## 1.0.3 - 2016-08-23
 
