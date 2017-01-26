@@ -40,12 +40,12 @@ class DemoMode
         return $next($request);
     }
 
-    protected function protectedByDemoMode(Request $request) : bool
+    protected function protectedByDemoMode(Request $request): bool
     {
         return true;
     }
 
-    protected function hasDemoAccess(Request $request) : bool
+    protected function hasDemoAccess(Request $request): bool
     {
         return session()->has('demo_access_granted') || auth()->check();
     }

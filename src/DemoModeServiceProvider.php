@@ -28,11 +28,11 @@ class DemoModeServiceProvider extends ServiceProvider
 
         $router->macro('demoAccess', function ($url) use ($router) {
 
-            if (!config('laravel-demo-mode.enabled')) {
+            if (! config('laravel-demo-mode.enabled')) {
                 return;
             }
 
-            $router->get($url, 'Spatie\DemoMode\DemoModeController@handle');
+            $router->get($url, '\Spatie\DemoMode\DemoModeController@handle');
         });
     }
 }

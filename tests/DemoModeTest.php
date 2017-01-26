@@ -37,16 +37,4 @@ class DemoModeTest extends TestCase
 
         $this->see('unprotected content');
     }
-
-    /** @test */
-    public function it_allows_cached_routes_file()
-    {
-        try {
-            \Artisan::call('route:cache');
-        } catch (\Exception $e) {
-            $this->assertTrue(false);
-        }
-
-        $this->assertTrue(true);
-    }
 }
