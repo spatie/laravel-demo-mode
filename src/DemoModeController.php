@@ -6,7 +6,7 @@ use Illuminate\Http\RedirectResponse;
 
 class DemoModeController extends \Illuminate\Routing\Controller
 {
-    public function handle(): RedirectResponse
+    public function grantAccess(): RedirectResponse
     {
         session()->put('demo_access_granted', true);
 

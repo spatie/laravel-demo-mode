@@ -32,7 +32,7 @@ class DemoModeServiceProvider extends ServiceProvider
                 return;
             }
 
-            $router->get($url, '\Spatie\DemoMode\DemoModeController@handle');
+            $router->get($url, '\Spatie\DemoMode\DemoModeController@grantAccess');
         });
     }
 }
