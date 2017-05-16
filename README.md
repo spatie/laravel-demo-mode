@@ -9,7 +9,7 @@
 
 Imagine you are working on a new app. Your client wants to see the progress that you've made. However your site isn't ready for prime time yet. Sure, you could create some login functionality and display the site only to logged in users. But why bother creating users when there is a more pragmatic approach?
 
-This package provides a route middleware to protected routes from prying eyes. All users that visit a protocted route will be redirect to a configurable url (e.g. `/under-construction`). To view the content of the routes a visitor must first visit a url that grants access (e.g. `/demo`).
+This package provides a route middleware to protected routes from prying eyes. All users that visit a protected route will be redirect to a configurable url (e.g. `/under-construction`). To view the content of the routes a visitor must first visit a url that grants access (e.g. `/demo`).
 
 A word to the wise: do not use this package to restrict access to sensitive data or to protect an admin section. For those cases you should use proper authentication.
 
