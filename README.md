@@ -28,7 +28,7 @@ The best postcards will get published on the open source page on our website.
 You can install the package via composer:
 
 ``` bash
-$ composer require spatie/laravel-demo-mode
+composer require spatie/laravel-demo-mode
 ```
 
 Next up, the service provider must be registered:
@@ -115,7 +115,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## Testing
 
 ``` bash
-$ composer test
+composer test
 ```
 
 ## Contributing
