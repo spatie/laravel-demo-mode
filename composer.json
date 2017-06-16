@@ -35,5 +35,12 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\DemoMode\\DemoModeServiceProvider"
+            ]
+        }
     }
 }
