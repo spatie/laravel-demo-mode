@@ -2,7 +2,14 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+
+## 2.0.0 - 2017-08-22
+
+- add L5.5 compatiblity, remove support for older versions
+- renamed config file from `laravel-demo-mode` to `demo-mode`
+
 ## 1.1.1 - 2017-01-26
+
 - access is now granted via a controller method so the route is cachable
 
 ## 1.1.0 - 2017-01-23
