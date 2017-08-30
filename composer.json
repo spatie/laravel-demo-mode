@@ -17,10 +17,10 @@
     ],
     "require": {
         "php" : "^7.0",
-        "illuminate/support": "5.5.x-dev"
+        "illuminate/support": "~5.5.0"
     },
     "require-dev": {
-        "orchestra/testbench": "3.5.x-dev",
+        "orchestra/testbench": "~3.5.0",
         "phpunit/phpunit": "^6.3"
     },
     "autoload": {
@@ -42,7 +42,5 @@
                 "Spatie\\DemoMode\\DemoModeServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
