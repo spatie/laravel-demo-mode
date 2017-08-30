@@ -8,14 +8,11 @@ use Orchestra\Testbench\TestCase as Orchestra;
 use Route;
 use Spatie\DemoMode\DemoModeServiceProvider;
 use Spatie\DemoMode\DemoMode;
-use PHPUnit_Framework_Assert as PHPUnit;
 
 class TestCase extends Orchestra
 {
-    /**
-     * @var array
-     */
-    protected $config;
+    /** @var array */
+    protected $config = [];
 
     public function setUp()
     {
@@ -25,7 +22,7 @@ class TestCase extends Orchestra
 
         $this->setUpRoutes($this->app);
 
-        $this->config = $this->app['config']->get('laravel-demo-mode');
+        $this->config = $this->app['config']->get('demo-mode');
     }
 
     /**
@@ -35,7 +32,7 @@ class TestCase extends Orchestra
     {
         $app['config']->set('app.key', '6rE9Nz59bGRbeMATftriyQjrpF7DcOQm');
 
-        $app['config']->set('laravel-demo-mode.redirect_authorized_users_to_url', '/secret-page');
+        $app['config']->set('demo-mode.redirect_authorized_users_to_url', '/secret-page');
     }
 
     /**
@@ -52,7 +49,7 @@ class TestCase extends Orchestra
 
     protected function registerMiddleware()
     {
-        $this->app[Router::class]->middleware('demoMode', DemoMode::class);
+        $this->app[Router::class]->aliasMiddleware('demoMode', DemoMode::class);
     }
 
     /**
@@ -73,19 +70,5 @@ class TestCase extends Orchestra
         Route::any('/under-construction', function () {
             return 'this site is not launched yet';
         });
-    }
-
-    /**
-     * Assert whether the client was redirected to a given URI.
-     *
-     * @param string $uri
-     * @param array  $with
-     */
-    public function assertRedirectedTo($uri, $with = [])
-    {
-        PHPUnit::assertInstanceOf('Illuminate\Http\RedirectResponse', $this->response);
-
-        PHPUnit::assertEquals(str_replace('http://localhost', '', $this->app['url']->to($uri)),
-            $this->response->headers->get('Location'));
     }
 }

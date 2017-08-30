@@ -13,7 +13,7 @@ class DemoModeServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/laravel-demo-mode.php' => config_path('laravel-demo-mode.php'),
+            __DIR__.'/../config/demo-mode.php' => config_path('demo-mode.php'),
         ], 'config');
     }
 
@@ -22,13 +22,13 @@ class DemoModeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-demo-mode.php', 'laravel-demo-mode');
+        $this->mergeConfigFrom(__DIR__.'/../config/demo-mode.php', 'demo-mode');
 
         $router = $this->app['router'];
 
         $router->macro('demoAccess', function ($url) use ($router) {
 
-            if (! config('laravel-demo-mode.enabled')) {
+            if (! config('demo-mode.enabled')) {
                 return;
             }
 

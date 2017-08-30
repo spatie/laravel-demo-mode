@@ -14,7 +14,7 @@ class DemoMode
 
     public function __construct(Repository $config)
     {
-        $this->config = $config->get('laravel-demo-mode');
+        $this->config = $config->get('demo-mode');
     }
 
     /**

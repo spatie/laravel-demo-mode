@@ -11,7 +11,7 @@ class DemoModeController extends \Illuminate\Routing\Controller
         session()->put('demo_access_granted', true);
 
         return new RedirectResponse(
-            config('laravel-demo-mode.redirect_authorized_users_to_url')
+            config('demo-mode.redirect_authorized_users_to_url')
         );
     }
 }
