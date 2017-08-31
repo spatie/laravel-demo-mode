@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 2.0.1 - 2017-08-31
+
+- fix deps
+
 ## 2.0.0 - 2017-08-22
 
 - add L5.5 compatiblity, remove support for older versions
