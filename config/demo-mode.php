@@ -18,4 +18,18 @@ return [
      */
     'redirect_authorized_users_to_url' => '/',
 
+    /**
+     * The following IP addresses will automatically have access to the app
+     * without having to pass the `demoAccess` route.
+     */
+    'authorized_ips' => [
+        //
+    ],
+
+    /**
+     * Only the IP addresses in `authorized_ips` are allowed to view the site.
+     * Url access is disabled.
+     */
+    'strict_mode' => false,
+
 ];

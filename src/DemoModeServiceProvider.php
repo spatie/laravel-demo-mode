@@ -2,7 +2,6 @@
 
 namespace Spatie\DemoMode;
 
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\ServiceProvider;
 
 class DemoModeServiceProvider extends ServiceProvider
@@ -27,8 +26,7 @@ class DemoModeServiceProvider extends ServiceProvider
         $router = $this->app['router'];
 
         $router->macro('demoAccess', function ($url) use ($router) {
-
-            if (! config('demo-mode.enabled')) {
+            if (! config('demo-mode.enabled') || config('demo-mode.strict_mode')) {
                 return;
             }
 
