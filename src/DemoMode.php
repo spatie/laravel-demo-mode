@@ -51,7 +51,7 @@ class DemoMode
             return true;
         }
 
-        return $this->demoRouteEnabled() && session()->has('demo_access_granted');
+        return $this->demoRouteEnabled() && session()->has('demo_access_route_visited');
     }
 
     protected function demoRouteEnabled(): bool
