@@ -2,17 +2,14 @@
 
 namespace Spatie\DemoMode\Test;
 
-use Illuminate\Routing\RouteCollection;
+use Illuminate\Foundation\Testing\TestResponse;
 
 class DemoModeTest extends TestCase
 {
     /** @test */
     public function it_redirects_users_who_have_not_been_granted_access_to_a_work_in_progress_page()
     {
-        $this
-            ->get('/secret-page')
-            ->assertRedirect()
-            ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);
+        $this->assertCannotVisitSecretPage();
     }
 
     /** @test */
@@ -20,7 +17,7 @@ class DemoModeTest extends TestCase
     {
         $this->app['config']->set('demo-mode.enabled', false);
 
-        $this->get('/secret-page')->assertStatus(200);
+        $this->assertCanVisitSecretPage();
     }
 
     /** @test */
@@ -30,6 +27,8 @@ class DemoModeTest extends TestCase
             ->get('/demo')
             ->assertRedirect()
             ->assertHeader('location', $this->config['redirect_authorized_users_to_url']);
+
+        $this->assertCanVisitSecretPage();
     }
 
     /** @test */
@@ -45,15 +44,11 @@ class DemoModeTest extends TestCase
     {
         $authorizedIps = ['192.0.2.1', '192.0.2.2', '192.0.2.3'];
 
-        $this
-            ->get('/secret-page')
-            ->assertRedirect();
+        $this->assertCannotVisitSecretPage();
 
         $this->app['config']->set('demo-mode.authorized_ips', $authorizedIps);
 
-        $this
-            ->call('GET', '/secret-page', [], [], [], ['REMOTE_ADDR' => $authorizedIps[0]])
-            ->assertSee('secret content');
+        $this->assertCannotVisitSecretPage($authorizedIps[0]);
     }
 
     /** @test */
@@ -75,17 +70,32 @@ class DemoModeTest extends TestCase
 
         $this->setUpRoutes($this->app);
 
-        $this
-            ->get('/secret-page')
-            ->assertRedirect()
-            ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);
+        $this->assertCannotVisitSecretPage();
 
         $authorizedIps = ['192.0.2.1', '192.0.2.2', '192.0.2.3'];
 
         $this->app['config']->set('demo-mode.authorized_ips', $authorizedIps);
 
-        $this
-            ->call('GET', '/secret-page', [], [], [], ['REMOTE_ADDR' => $authorizedIps[0]])
+        $this->assertCannotVisitSecretPage($authorizedIps[0]);
+    }
+
+    protected function getWithIp(string $uri, string $ip): TestResponse
+    {
+        return $this->call('GET', $uri, [], [], [], ['REMOTE_ADDR' => $ip]);
+    }
+
+    protected function assertCanVisitSecretPage(string $ip = '127.0.0.1')
+    {
+        $this->getWithIp('/secret-page', $ip)
+            ->assertStatus(200)
             ->assertSee('secret content');
+    }
+
+    protected function assertCannotVisitSecretPage()
+    {
+        $this
+            ->get('/secret-page')
+            ->assertRedirect()
+            ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);
     }
 }

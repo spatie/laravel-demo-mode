@@ -23,7 +23,7 @@ return [
      * without having to pass the `demoAccess` route.
      */
     'authorized_ips' => [
-        //
+        
     ],
 
     /**
