@@ -73,14 +73,32 @@ return [
      */
     'redirect_authorized_users_to_url' => '/',
 
+    /**
+     * The following IP addresses will automatically have access to the app
+     * without having to pass the `demoAccess` route.
+     */
+    'authorized_ips' => [
+
+    ],
+
+    /**
+     * Only the IP addresses in `authorized_ips` are allowed to view the site.
+     * Url access is disabled.
+     */
+    'strict_mode' => false,
+
 ];
 ```
 
-In your routes file you must call the `demoAccess` route macro.
+If you want to use the `demoAccess` route you must call the `demoAccess` route macro in your routes file.
 ```php
 Route::demoAccess('/demo');
 ```
 Visiting `/demo` will grant access to the pages protected by demo mode. Of course you can choose any url you'd like.
+
+If you want to automatically authorize certain IP addresses you can add them in the `authorized_ips` array in the `demo-mode.php` config file.
+
+To disable the `demoAccess` route and only allow access to the `authorized_ips` you can enable `strict_mode` in the `demo-mode.php` config file.
 
 ## Usage
 
@@ -96,7 +114,7 @@ Route::group(['middleware' => 'demoMode'], function () {
 });
 ```
 
-Unless you visit the url used by the `demoAccess` route macro first, visiting these routes will result in a redirect in to the url specified in the `redirect_unauthorized_users_to_url`-key of the config file.
+Unless you visit the url used by the `demoAccess` route macro first or from an authorized IP address, visiting these routes will result in a redirect in to the url specified in the `redirect_unauthorized_users_to_url`-key of the config file.
 
 An authenticated user has access to all protected routes too.
 

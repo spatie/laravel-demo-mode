@@ -27,12 +27,12 @@ class DemoMode
      */
     public function handle($request, Closure $next)
     {
-        if (!$this->config['enabled']) {
+        if (! $this->config['enabled']) {
             return $next($request);
         }
-        
+
         if ($this->protectedByDemoMode($request)) {
-            if (!$this->hasDemoAccess($request)) {
+            if (! $this->hasDemoAccess($request)) {
                 return new RedirectResponse($this->config['redirect_unauthorized_users_to_url']);
             }
         }
@@ -47,6 +47,20 @@ class DemoMode
 
     protected function hasDemoAccess(Request $request): bool
     {
-        return session()->has('demo_access_granted') || auth()->check();
+        if ($this->isIpAuthorized($request) || auth()->check()) {
+            return true;
+        }
+
+        return $this->demoRouteEnabled() && session()->has('demo_access_route_visited');
+    }
+
+    protected function demoRouteEnabled(): bool
+    {
+        return ! $this->config['strict_mode'];
+    }
+
+    protected function isIpAuthorized(Request $request): bool
+    {
+        return in_array($request->ip(), $this->config['authorized_ips']);
     }
 }

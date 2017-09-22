@@ -3,6 +3,7 @@
 namespace Spatie\DemoMode\Test;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Routing\RouteCollection;
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Route;
@@ -57,6 +58,8 @@ class TestCase extends Orchestra
      */
     protected function setUpRoutes($app)
     {
+        $this->app->get('router')->setRoutes(new RouteCollection());
+
         Route::demoAccess('/demo');
 
         Route::any('/secret-page', ['middleware' => 'demoMode', function () {
