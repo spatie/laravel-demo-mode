@@ -6,6 +6,10 @@ All notable changes to `laravel-demo-mode` will be documented in this file
 
 - add demo access via IP address and strict mode to only allow access via IP address
 
+## 2.1.0 - 2017-09-22
+
+- does not exist, forgot to use this version :-)
+
 ## 2.0.1 - 2017-08-31
 
 - fix deps
