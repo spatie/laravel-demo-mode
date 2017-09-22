@@ -82,8 +82,8 @@ return [
     ],
 
     /**
-     * Only the IP addresses in `authorized_ips` are allowed to view the site.
-     * Url access is disabled.
+     * If strict mode is enabled then only the IP addresses listed in `authorized_ips` are allowed.
+     * Vistors won't be able to gain access by visiting the  `demoAccess` route anymore.
      */
     'strict_mode' => false,
 
