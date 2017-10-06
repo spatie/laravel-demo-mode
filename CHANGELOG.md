@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 2.2.0 - 2017-10-06
+
+- add unauthorized user redirect support when accessing an unknown route (404)
+
 ## 2.1.1 - 2017-09-22
 
 - add demo access via IP address and strict mode to only allow access via IP address

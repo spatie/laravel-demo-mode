@@ -32,5 +32,7 @@ class DemoModeServiceProvider extends ServiceProvider
 
             $router->get($url, '\Spatie\DemoMode\DemoModeController@grantAccess');
         });
+
+        $router->fallback('\Spatie\DemoMode\DemoModeController@catchFallback');
     }
 }

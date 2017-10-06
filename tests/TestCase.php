@@ -23,6 +23,8 @@ class TestCase extends Orchestra
 
         $this->setUpRoutes($this->app);
 
+        $this->registerFallbackRoute();
+
         $this->config = $this->app['config']->get('demo-mode');
     }
 
@@ -73,5 +75,10 @@ class TestCase extends Orchestra
         Route::any('/under-construction', function () {
             return 'this site is not launched yet';
         });
+    }
+
+    protected function registerFallbackRoute()
+    {
+        $this->app[Router::class]->fallback('\Spatie\DemoMode\DemoModeController@catchFallback');
     }
 }
