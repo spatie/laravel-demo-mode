@@ -79,6 +79,15 @@ class DemoModeTest extends TestCase
         $this->assertCannotVisitSecretPage($authorizedIps[0]);
     }
 
+    /** @test */
+    public function it_redirects_users_who_have_not_been_granted_demo_access_when_accessing_an_unknown_route()
+    {
+        $this
+            ->get('/unknown-page')
+            ->assertRedirect()
+            ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);
+    }
+
     protected function getWithIp(string $uri, string $ip): TestResponse
     {
         return $this->call('GET', $uri, [], [], [], ['REMOTE_ADDR' => $ip]);
