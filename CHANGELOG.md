@@ -4,7 +4,7 @@ All notable changes to `laravel-demo-mode` will be documented in this file
 
 ## 2.2.0 - 2017-10-06
 
-- add unauthorized user redirect support when accessing an unknown route (404)
+- prevent visitors of seeing the 404 page of a site
 
 ## 2.1.1 - 2017-09-22
 
