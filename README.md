@@ -48,37 +48,35 @@ This is the content of the published config file `demo-mode.php`:
 
 ```php
 return [
-    
-    /**
+
+    /*
      * This is the master switch to enable demo mode.
      */
     'enabled' => env('DEMO_MODE_ENABLED', true),
     
-    /**
-     * Visitors that go an url that is protected by demo mode will be redirected.
-     * to this url
+    /*
+     * Visitors browsing a protected url will be redirected to this path.
      */
     'redirect_unauthorized_users_to_url' => '/under-construction',
-
-    /**
-     * After have been granted access visitors will be redirected to this url.
+    
+    /*
+     * After having gained access, visitors will be redirected to this path.
      */
     'redirect_authorized_users_to_url' => '/',
-
-    /**
-     * The following IP addresses will automatically have access to the app
-     * without having to pass the `demoAccess` route.
+   
+    /*
+     * The following IP's will automatically gain access to the
+     * app without having to visit the `demoAccess` route.
      */
     'authorized_ips' => [
-
+        //
     ],
-
-    /**
-     * If strict mode is enabled then only the IP addresses listed in `authorized_ips` are allowed.
-     * Vistors won't be able to gain access by visiting the  `demoAccess` route anymore.
+    
+    /*
+     * When strict mode is enabled, only IP's listed in `authorized_ips` will gain access.
+     * Visitors won't be able to gain access by visiting the `demoAccess` route anymore.
      */
     'strict_mode' => false,
-
 ];
 ```
 
