@@ -53,17 +53,17 @@ return [
      * This is the master switch to enable demo mode.
      */
     'enabled' => env('DEMO_MODE_ENABLED', true),
-    
+
     /*
      * Visitors browsing a protected url will be redirected to this path.
      */
     'redirect_unauthorized_users_to_url' => '/under-construction',
-    
+
     /*
      * After having gained access, visitors will be redirected to this path.
      */
     'redirect_authorized_users_to_url' => '/',
-   
+
     /*
      * The following IP's will automatically gain access to the
      * app without having to visit the `demoAccess` route.
@@ -71,7 +71,7 @@ return [
     'authorized_ips' => [
         //
     ],
-    
+
     /*
      * When strict mode is enabled, only IP's listed in `authorized_ips` will gain access.
      * Visitors won't be able to gain access by visiting the `demoAccess` route anymore.
@@ -108,6 +108,8 @@ Unless you visit the url used by the `demoAccess` route macro first or from an a
 
 An authenticated user has access to all protected routes too.
 
+Because it uses session to verify the user, both `demoAccess` route and protected routes must have the `web` middleware, or having the `\Illuminate\Session\Middleware\StartSession` middleware to be able to authorize a user that is either not authenticated or not visiting from an authorized IP.
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
@@ -143,7 +145,7 @@ We publish all received postcards [on our company website](https://spatie.be/en/
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie).
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
