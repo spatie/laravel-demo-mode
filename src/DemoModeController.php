@@ -18,6 +18,10 @@ class DemoModeController extends \Illuminate\Routing\Controller
 
     public function catchFallback(Request $request): RedirectResponse
     {
+        if (!config('demo-mode.enabled')) {
+            abort(404);
+        }
+        
         if (! (new DemoGuard())->hasDemoAccess($request)) {
             return new RedirectResponse(
                 config('demo-mode.redirect_unauthorized_users_to_url')
