@@ -91,12 +91,12 @@ class DemoModeTest extends TestCase
     }
 
     /** @test */
-    public function it_gives_default_404_when_demo_mode_is_disabled()
+    public function it_shows_the_default_404_page_when_demo_mode_is_disabled()
     {
         $this->app['config']->set('demo-mode.enabled', false);
 
         $this
-            ->get('/qwerty')
+            ->get('/non-existing-page')
             ->assertStatus(404);
     }
 
