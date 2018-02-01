@@ -7,8 +7,8 @@ use Illuminate\Routing\RouteCollection;
 use Illuminate\Routing\Router;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Route;
-use Spatie\DemoMode\DemoModeServiceProvider;
 use Spatie\DemoMode\DemoMode;
+use Spatie\DemoMode\DemoModeServiceProvider;
 
 class TestCase extends Orchestra
 {
