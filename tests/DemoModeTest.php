@@ -90,6 +90,16 @@ class DemoModeTest extends TestCase
             ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);
     }
 
+    /** @test */
+    public function it_gives_default_404_when_demo_mode_is_disabled()
+    {
+        $this->app['config']->set('demo-mode.enabled', false);
+
+        $this
+            ->get('/qwerty')
+            ->assertStatus(404);
+    }
+
     protected function getWithIp(string $uri, string $ip): TestResponse
     {
         return $this->call('GET', $uri, [], [], [], ['REMOTE_ADDR' => $ip]);
