@@ -2,8 +2,8 @@
 
 namespace Spatie\DemoMode;
 
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class DemoModeController extends \Illuminate\Routing\Controller
 {
@@ -21,8 +21,8 @@ class DemoModeController extends \Illuminate\Routing\Controller
         if (!config('demo-mode.enabled')) {
             abort(404);
         }
-        
-        if (! (new DemoGuard())->hasDemoAccess($request)) {
+
+        if (!(new DemoGuard())->hasDemoAccess($request)) {
             return new RedirectResponse(
                 config('demo-mode.redirect_unauthorized_users_to_url')
             );
