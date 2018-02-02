@@ -26,7 +26,7 @@ class DemoModeServiceProvider extends ServiceProvider
         $router = $this->app['router'];
 
         $router->macro('demoAccess', function ($url) use ($router) {
-            if (! config('demo-mode.enabled') || config('demo-mode.strict_mode')) {
+            if (!config('demo-mode.enabled') || config('demo-mode.strict_mode')) {
                 return;
             }
 
