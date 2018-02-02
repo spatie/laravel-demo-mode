@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 2.2.1 - 2018-02-08
+
+- fix bug where the wrong 404 might be shown
+
 ## 2.2.0 - 2017-10-06
 
 - prevent visitors of seeing the 404 page of a site
