@@ -20,7 +20,7 @@
         "illuminate/support": "~5.5.5"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.5.0",
+        "orchestra/testbench": "~3.5.3",
         "phpunit/phpunit": "^6.3"
     },
     "autoload": {
