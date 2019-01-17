@@ -4,7 +4,6 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/spatie/laravel-demo-mode/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-demo-mode)
 [![StyleCI](https://styleci.io/repos/54675475/shield?branch=master)](https://styleci.io/repos/54675475)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/5fb290e3-4f00-4abb-91f3-1163d3715108.svg?style=flat-square)](https://insight.sensiolabs.com/projects/5fb290e3-4f00-4abb-91f3-1163d3715108)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-demo-mode.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-demo-mode)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-demo-mode.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-demo-mode)
 
