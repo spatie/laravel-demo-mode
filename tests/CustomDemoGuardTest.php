@@ -23,7 +23,7 @@ class CustomDemoGuardTest extends TestCase
     }
 
     /** @test */
-    function it_will_restrict_access_to_secret_pages_if_the_custom_flag_is_set_to_false()
+    public function it_will_restrict_access_to_secret_pages_if_the_custom_flag_is_set_to_false()
     {
         $this->turnFlagOff()
             ->assertCannotVisitSecretPage();

@@ -31,7 +31,7 @@ class DefaultDemoGuardTest extends TestCase
     {
         $this->app['config']->set('demo-mode.strict_mode', true);
 
-        $this-> setUpRoutes($this->app);
+        $this->setUpRoutes($this->app);
 
         $this->assertCannotVisitSecretPage();
 
