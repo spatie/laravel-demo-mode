@@ -4,7 +4,7 @@ namespace Spatie\DemoMode;
 
 use Illuminate\Http\Request;
 
-class DemoGuard
+class DemoGuard implements DemoGuardContract
 {
     public function hasDemoAccess(Request $request): bool
     {
