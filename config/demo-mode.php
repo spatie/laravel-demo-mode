@@ -8,6 +8,11 @@ return [
     'enabled' => env('DEMO_MODE_ENABLED', true),
 
     /*
+     * Guard to be used by the package to check access mode.
+     */
+    'guard' => \Spatie\DemoMode\DemoGuard::class,
+
+    /*
      * Visitors browsing a protected url will be redirected to this path.
      */
     'redirect_unauthorized_users_to_url' => '/under-construction',
