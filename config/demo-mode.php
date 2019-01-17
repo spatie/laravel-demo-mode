@@ -8,7 +8,7 @@ return [
     'enabled' => env('DEMO_MODE_ENABLED', true),
 
     /*
-     * Guard to be used by the package to check access mode.
+     * Guard to be used in order to grant or deny access.
      */
     'guard' => \Spatie\DemoMode\DemoGuard::class,
 
