@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\DemoMode\Test;
+namespace Spatie\DemoMode\Test\Concerns;
 
 use Illuminate\Foundation\Testing\Concerns\InteractsWithExceptionHandling;
 use Illuminate\Foundation\Testing\TestResponse;
 
-trait TestsShared
+trait SharesTests
 {
     use InteractsWithExceptionHandling;
 

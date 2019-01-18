@@ -10,7 +10,7 @@ return [
     /*
      * Guard to be used in order to grant or deny access.
      */
-    'guard' => \Spatie\DemoMode\DemoGuard::class,
+    'guard' => \Spatie\DemoMode\DefaultDemoGuard::class,
 
     /*
      * Visitors browsing a protected url will be redirected to this path.

@@ -22,7 +22,7 @@ class DemoModeController extends \Illuminate\Routing\Controller
             abort(404);
         }
 
-        if (!app(DemoGuardContract::class)->hasDemoAccess($request)) {
+        if (!app(DemoGuard::class)->hasDemoAccess($request)) {
             return new RedirectResponse(
                 config('demo-mode.redirect_unauthorized_users_to_url')
             );

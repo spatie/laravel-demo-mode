@@ -3,9 +3,9 @@
 namespace Spatie\DemoMode\Test;
 
 use Illuminate\Http\Request;
-use Spatie\DemoMode\DemoGuardContract;
+use Spatie\DemoMode\DemoGuard;
 
-class TestDemoGuard implements DemoGuardContract
+class TestDemoGuard implements DemoGuard
 {
     public $flag = false;
 

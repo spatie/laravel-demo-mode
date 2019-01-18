@@ -2,11 +2,12 @@
 
 namespace Spatie\DemoMode\Test;
 
-use Spatie\DemoMode\DemoGuardContract;
+use Spatie\DemoMode\DemoGuard;
+use Spatie\DemoMode\Test\Concerns\SharesTests;
 
 class CustomDemoGuardTest extends TestCase
 {
-    use TestsShared;
+    use SharesTests;
 
     protected function resolveApplicationConfiguration($app)
     {
@@ -41,14 +42,14 @@ class CustomDemoGuardTest extends TestCase
 
     private function turnFlagOn()
     {
-        $this->app->get(DemoGuardContract::class)->flag = true;
+        $this->app->get(DemoGuard::class)->flag = true;
 
         return $this;
     }
 
     private function turnFlagOff()
     {
-        $this->app->get(DemoGuardContract::class)->flag = false;
+        $this->app->get(DemoGuard::class)->flag = false;
 
         return $this;
     }
