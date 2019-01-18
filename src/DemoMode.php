@@ -32,7 +32,7 @@ class DemoMode
         }
 
         if ($this->protectedByDemoMode($request)) {
-            if (!(new DemoGuard())->hasDemoAccess($request)) {
+            if (!app(DemoGuardContract::class)->hasDemoAccess($request)) {
                 return new RedirectResponse($this->config['redirect_unauthorized_users_to_url']);
             }
         }

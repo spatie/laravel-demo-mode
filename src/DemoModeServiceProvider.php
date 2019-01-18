@@ -34,5 +34,7 @@ class DemoModeServiceProvider extends ServiceProvider
         });
 
         $router->fallback('\Spatie\DemoMode\DemoModeController@catchFallback');
+
+        $this->app->singleton(DemoGuardContract::class, config('demo-mode.guard'));
     }
 }
