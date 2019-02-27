@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 2.3.1 - 2018-02-27
+
+- add support for Laravel 5.8
+
 ## 2.3.0 - 2018-01-18
 
 - allow guard to be overridden

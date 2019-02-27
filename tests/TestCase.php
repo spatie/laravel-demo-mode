@@ -15,7 +15,7 @@ class TestCase extends Orchestra
     /** @var array */
     protected $config = [];
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
