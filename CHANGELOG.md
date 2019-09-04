@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 2.5.0 - 2019-04-09
+
+- make compatible with Laravel 6
+
 ## 2.4.0 - 2018-02-27
 
 - drop support for PHP 7.1
