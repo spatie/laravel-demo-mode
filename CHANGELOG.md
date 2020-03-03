@@ -2,9 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
-## 3.0.0 - 2020-03-03
+## 2.6.0 - 2020-03-03
 
 - make compatible with Laravel 7
+- drop support for all older version of Laravel
 
 ## 2.5.0 - 2019-04-09
 
