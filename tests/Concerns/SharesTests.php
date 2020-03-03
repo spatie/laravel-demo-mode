@@ -3,7 +3,7 @@
 namespace Spatie\DemoMode\Test\Concerns;
 
 use Illuminate\Foundation\Testing\Concerns\InteractsWithExceptionHandling;
-use Illuminate\Foundation\Testing\TestResponse;
+use Illuminate\Testing\TestResponse;
 
 trait SharesTests
 {
