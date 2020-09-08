@@ -2,9 +2,8 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-demo-mode.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-demo-mode)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-demo-mode/run-tests?label=tests)
-[![StyleCI](https://styleci.io/repos/54675475/shield?branch=master)](https://styleci.io/repos/54675475)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-demo-mode.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-demo-mode)
+![Test Status](https://img.shields.io/github/workflow/status/spatie/laravel-demo-mode/run-tests?label=tests)
+![Code Style Status](https://img.shields.io/github/workflow/status/spatie/laravel-demo-mode/php-cs-fixer?label=tests)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-demo-mode.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-demo-mode)
 
 Imagine you are working on a new app. Your client wants to see the progress that you've made. However your site isn't ready for prime time yet. Sure, you could create some login functionality and display the site only to logged in users. But why bother creating users when there is a more pragmatic approach?

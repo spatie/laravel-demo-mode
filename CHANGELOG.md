@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 2.7.0 - 2020-09-08
+
+- add support for Laravel 8
+
 ## 2.6.0 - 2020-03-03
 
 - make compatible with Laravel 7
