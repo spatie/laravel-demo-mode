@@ -17,7 +17,7 @@ class DefaultDemoGuard implements DemoGuard
 
     protected function demoRouteEnabled(): bool
     {
-        return !config('demo-mode.strict_mode');
+        return ! config('demo-mode.strict_mode');
     }
 
     protected function isIpAuthorized(Request $request): bool

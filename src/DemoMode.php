@@ -27,12 +27,12 @@ class DemoMode
      */
     public function handle($request, Closure $next)
     {
-        if (!$this->config['enabled']) {
+        if (! $this->config['enabled']) {
             return $next($request);
         }
 
         if ($this->protectedByDemoMode($request)) {
-            if (!app(DemoGuard::class)->hasDemoAccess($request)) {
+            if (! app(DemoGuard::class)->hasDemoAccess($request)) {
                 return new RedirectResponse($this->config['redirect_unauthorized_users_to_url']);
             }
         }
