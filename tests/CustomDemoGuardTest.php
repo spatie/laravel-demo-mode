@@ -33,8 +33,7 @@ class CustomDemoGuardTest extends TestCase
     /** @test */
     public function it_redirects_users_when_accessing_an_unknown_route_if_the_custom_flag_is_off()
     {
-        $this
-            ->turnFlagOff()
+        $this->turnFlagOff()
             ->get('/unknown-page')
             ->assertRedirect()
             ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);

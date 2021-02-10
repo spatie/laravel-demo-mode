@@ -20,8 +20,7 @@ trait SharesTests
     /** @test */
     public function it_will_not_intervene_with_unprotected_routes()
     {
-        $this
-            ->get('/unprotected-page')
+        $this->get('/unprotected-page')
             ->assertSee('unprotected content');
     }
 
@@ -32,8 +31,7 @@ trait SharesTests
 
         $this->setUpRoutes($this->app);
 
-        $this
-            ->get('/demo')
+        $this->get('/demo')
             ->assertStatus(404);
     }
 
@@ -42,8 +40,7 @@ trait SharesTests
     {
         $this->app['config']->set('demo-mode.enabled', false);
 
-        $this
-            ->get('/non-existing-page')
+        $this->get('/non-existing-page')
             ->assertStatus(404);
     }
 
