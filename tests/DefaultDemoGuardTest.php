@@ -47,8 +47,7 @@ class DefaultDemoGuardTest extends TestCase
     /** @test */
     public function it_will_allow_visiting_secret_pages_after_having_visited_the_grant_demo_url_first()
     {
-        $this
-            ->get('/demo')
+        $this->get('/demo')
             ->assertRedirect()
             ->assertHeader('location', $this->config['redirect_authorized_users_to_url']);
 
@@ -58,8 +57,7 @@ class DefaultDemoGuardTest extends TestCase
     /** @test */
     public function it_redirects_users_who_have_not_been_granted_demo_access_when_accessing_an_unknown_route()
     {
-        $this
-            ->get('/unknown-page')
+        $this->get('/unknown-page')
             ->assertRedirect()
             ->assertHeader('location', $this->config['redirect_unauthorized_users_to_url']);
     }

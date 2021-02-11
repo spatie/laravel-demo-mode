@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-demo-mode` will be documented in this file
 
+## 3.0.0 - 2021-02-11
+
+- add support for PHP 8.0
+- drop support for PHP 7.3 and below
+
 ## 2.7.0 - 2020-09-08
 
 - add support for Laravel 8
