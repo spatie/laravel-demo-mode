@@ -14,6 +14,10 @@ A word to the wise: do not use this package to restrict access to sensitive data
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
+## Notice
+
+If you're on Laravel 8 or higher, use Laravel's built in `php artisan down` command to activate demo mode. You don't need this package for that.
+
 ## Support us
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-demo-mode.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-demo-mode)
